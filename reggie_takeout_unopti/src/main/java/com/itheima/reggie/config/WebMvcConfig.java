@@ -1,10 +1,12 @@
 package com.itheima.reggie.config;
 
 import com.itheima.reggie.common.JacksonObjectMapper;
+import com.itheima.reggie.interceptor.MyInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
@@ -43,4 +45,23 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
         converters.add(0,messageConverter);//0表示放在最前面，最优先使用
         super.extendMessageConverters(converters);
     }
+
+//    //拦截器配置
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        String[] urls = new String[]{ //放行的请求
+//                "/employee/login",
+//                "/employee/logout",
+//                "/backend/**", // 静态资源不用处理都放行
+//                "/front/**",
+//                "/common/**",
+//                "/user/sendMsg", //移动端发送短信
+//                "/user/login"   //移动端登录
+//        };
+//        registry.addInterceptor(new MyInterceptor()) //拦截器注册对象
+//                .addPathPatterns("/**") //指定要拦截的请求
+//                .excludePathPatterns(urls); //排除请求
+//
+//    }
+
 }
