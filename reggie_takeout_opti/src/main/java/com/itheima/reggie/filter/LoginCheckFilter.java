@@ -37,15 +37,22 @@ public class LoginCheckFilter implements Filter {
 
         log.info("拦截到请求：{}",requsetURI);
 
+
+        //这样做存在问题：当某一端登录成功后，另一端不需要登录也能请求资源
+        //修改：把用户端和后台端的放行路径进行分开判断(待完善)
+        StringBuffer requestURL = request.getRequestURL();//http://localhost:8080/front/index.html
+
+
         String[] urls = new String[]{ //放行的请求
                 "/employee/login",
                 "/employee/logout",
                 "/backend/**", // 静态资源不用处理都放行
-                "/front/**",
                 "/common/**",
+                "/front/**",
                 "/user/sendMsg", //移动端发送短信
                 "/user/login"   //移动端登录
         };
+
         //2、判断本次请求是否需要处理
         boolean check = check(requsetURI,urls);
 
