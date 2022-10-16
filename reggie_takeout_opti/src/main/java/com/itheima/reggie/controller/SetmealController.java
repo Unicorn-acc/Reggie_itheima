@@ -14,6 +14,8 @@ import com.itheima.reggie.service.SetmealService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,6 +42,7 @@ public class SetmealController {
     private CategoryService categoryService;
 
     @PostMapping
+    @CacheEvict(value = "setmealCache",allEntries = true)
     public R<String> save(@RequestBody SetmealDto setmealDto){
         log.info("套餐信息：{}",setmealDto.toString());
         setmealService.saveWithDish(setmealDto);
@@ -97,9 +100,13 @@ public class SetmealController {
      * @return
      */
     @DeleteMapping
+    @CacheEvict(value = "setmealCache",allEntries = true)
     public R<String> delete(@RequestParam("ids") List<Long> ids){
         log.info(ids.toString());
         setmealService.removeWithDish(ids);
+
+        log.info("删除套餐...");
+
         return R.success("删除成功");
     }
 
@@ -110,6 +117,7 @@ public class SetmealController {
      * @return
      */
     @PostMapping("/status/{status}")
+    @CacheEvict(value = "setmealCache",allEntries = true)
     public R<String> updatestatus(@PathVariable("status") int status,@RequestParam("ids") List<Long> ids){
         log.info(status+" "+ids.toString());
         setmealService.updateStatusById(ids,status);
@@ -129,8 +137,13 @@ public class SetmealController {
 //        return R.success(list);
 //    }
 
+    //加入Cache报错：
+    // DefaultSerializer requires a Serializable payload but received an object of type [com.itheima.reggie.common.R]
+    // 是因为这个R类不能存储，要实现序列化接口
     @GetMapping("/list")
+    @Cacheable(value = "setmealCache",key = "#setmeal.categoryId + '_' + #setmeal.status")
     public R<List<SetmealDto>> list(Setmeal setmeal){
+        log.info("查询套餐信息...");
         LambdaQueryWrapper<Setmeal> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(setmeal.getCategoryId() != null, Setmeal::getCategoryId,setmeal.getCategoryId());
         queryWrapper.orderByDesc(Setmeal::getUpdateTime);
@@ -174,6 +187,7 @@ public class SetmealController {
     }
 
     @PutMapping
+    @CacheEvict(value = "setmealCache",allEntries = true)
     public R<String> update(@RequestBody SetmealDto setmealDto){
         log.info("setmealDto:{}",setmealDto.toString());
         setmealService.updatedetail(setmealDto);

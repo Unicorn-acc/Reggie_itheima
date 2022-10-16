@@ -45,6 +45,11 @@ public class DishController {
     public R<String> save(@RequestBody  DishDto dishDto){
         log.info(dishDto.toString());
         dishService.saveWithFlavor(dishDto);
+
+        Set keys = redisTemplate.keys("dish*");//所有以dish开头的缓存数据
+        redisTemplate.delete(keys);
+        log.info("菜品更新，清理所有dish缓存数据");
+
         return R.success("新增菜品成功");
     }
 
