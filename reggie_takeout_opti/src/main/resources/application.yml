@@ -36,7 +36,7 @@ spring:
   main:
     allow-bean-definition-overriding: true
   redis:
-    host: localhost
+    host: 192.168.19.128
     port: 6379
     # password: root@123456
     database: 0
