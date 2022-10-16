@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -13,6 +15,7 @@ import java.time.LocalDateTime;
  菜品
  */
 @Data
+@ApiModel("菜品")
 public class Dish implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -21,10 +24,12 @@ public class Dish implements Serializable {
 
 
     //菜品名称
+    @ApiModelProperty("主键")
     private String name;
 
 
     //菜品分类id
+    @ApiModelProperty("分类id")
     private Long categoryId;
 
 

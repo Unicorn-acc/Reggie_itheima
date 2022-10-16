@@ -96,12 +96,20 @@
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
 
-        <!--        使用shardingjdbc实现读写分离的依赖-->
+        <!-- 使用shardingjdbc实现读写分离的依赖-->
         <dependency>
             <groupId>org.apache.shardingsphere</groupId>
             <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
             <version>4.0.0-RC1</version>
         </dependency>
+
+        <!-- knife4j是为Java MVC框架集成Swagger生成Api文档的增强解决方案-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+
 
     </dependencies>
 
