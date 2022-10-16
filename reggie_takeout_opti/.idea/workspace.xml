@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a186add6-3150-42a9-b408-94d4daa478cf" name="Default Changelist" comment="缓存套餐数据">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +69,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ReggieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="reggie_takeout_opti" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.itheima.reggie.ReggieApplication" />
@@ -107,6 +119,7 @@
       <workItem from="1665902024333" duration="36000" />
       <workItem from="1665902357383" duration="6000" />
       <workItem from="1665902687605" duration="925000" />
+      <workItem from="1665905361932" duration="452000" />
     </task>
     <task id="LOCAL-00001" summary="Redis进行菜品缓存">
       <created>1665848450466</created>
