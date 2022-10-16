@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a186add6-3150-42a9-b408-94d4daa478cf" name="Default Changelist" comment="缓存套餐数据">
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +49,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DB_RWseparation_demo" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="ReactorSettings">
@@ -64,17 +68,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ReggieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="reggie_takeout_opti" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.itheima.reggie.ReggieApplication" />
@@ -111,6 +104,9 @@
       <workItem from="1665801229630" duration="1615000" />
       <workItem from="1665839253490" duration="8969000" />
       <workItem from="1665879263499" duration="3239000" />
+      <workItem from="1665902024333" duration="36000" />
+      <workItem from="1665902357383" duration="6000" />
+      <workItem from="1665902687605" duration="925000" />
     </task>
     <task id="LOCAL-00001" summary="Redis进行菜品缓存">
       <created>1665848450466</created>
